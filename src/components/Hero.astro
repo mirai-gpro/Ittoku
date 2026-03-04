@@ -1,0 +1,131 @@
+<section id="hero">
+  <div class="hero-bg"></div>
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="/videos/hero_reel.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag" data-en="Ginza, Tokyo &nbsp;·&nbsp; Private Bookings Only" data-ja="東京・銀座　·　完全予約制">Ginza, Tokyo &nbsp;·&nbsp; Private Bookings Only</div>
+    <h1 class="hero-h1" data-en="Step Into Imperial Japan" data-ja="帝国の日本へ、<br>一歩踏み込む">Step Into Imperial Japan</h1>
+    <p class="hero-h2" data-en="Experience Kyoto's ¥300 Million Palace Reconstruction<br>in the Heart of Ginza — with Tokyo's Most Gracious Hosts" data-ja="3億円を投じた京都御殿の再現空間で<br>銀座の夜を、特別なひとときに">Experience Kyoto's ¥300 Million Palace Reconstruction<br>in the Heart of Ginza — with Tokyo's Most Gracious Hosts</p>
+    <div class="hero-buttons">
+      <a href="#booking" class="btn-primary" data-en="Reserve Your Private Experience" data-ja="プライベート体験を予約する">Reserve Your Private Experience</a>
+      <a href="#experience" class="btn-outline" data-en="Discover the Experience ↓" data-ja="体験内容を見る ↓">Discover the Experience ↓</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><span class="trust-icon">✓</span> <span data-en="Private Bookings Only" data-ja="完全予約制">Private Bookings Only</span></div>
+      <div class="trust-item"><span class="trust-icon">★</span> <span data-en="5.0 Google Rating" data-ja="Google 5.0評価">5.0 Google Rating</span></div>
+      <div class="trust-item"><span class="trust-icon">✓</span> <span data-en="English & Japanese Hosts" data-ja="日英対応キャスト">English & Japanese Hosts</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span data-en="Scroll" data-ja="スクロール">Scroll</span>
+  </div>
+</section>
+
+<style>
+  #hero {
+    position: relative;
+    height: 100vh;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('/images/instagram/hero_interior.jpg') center/cover no-repeat;
+    z-index: 0;
+  }
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    width: 100%; height: 100%;
+    z-index: 1;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.75) 100%);
+    z-index: 2;
+  }
+  .hero-content {
+    position: relative; z-index: 3;
+    max-width: 950px;
+    padding: 0 2rem;
+  }
+  .hero-tag {
+    display: inline-block;
+    border: 1px solid rgba(201,168,76,0.6);
+    color: var(--gold-light);
+    padding: 0.4rem 1.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-family: var(--font-sans);
+    font-weight: 300;
+  }
+  .hero-h1 {
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+  }
+  .hero-h2 {
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
+    color: rgba(255,255,255,0.85);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    margin-bottom: 3rem;
+    font-family: var(--font-sans);
+    line-height: 1.7;
+  }
+  .hero-buttons {
+    display: flex; gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+  }
+  .hero-trust {
+    display: flex; justify-content: center;
+    gap: 2.5rem; flex-wrap: wrap;
+  }
+  .trust-item {
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.04em;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .trust-item .trust-icon { color: var(--gold); }
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    animation: scrollBounce 2s infinite;
+  }
+  .hero-scroll::after {
+    content: '';
+    width: 1px; height: 45px;
+    background: linear-gradient(to bottom, rgba(201,168,76,0.7), transparent);
+  }
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(7px); }
+  }
+  @media (max-width: 768px) {
+    .hero-buttons { flex-direction: column; align-items: center; }
+    .hero-trust { flex-direction: column; align-items: center; gap: 0.75rem; }
+  }
+</style>

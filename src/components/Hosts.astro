@@ -1,0 +1,60 @@
+<section id="hosts">
+  <div class="section-inner">
+    <div class="hosts-grid fade-in">
+      <div class="hosts-image">
+        <img src="/images/instagram/eagle_painting_sofa.jpg" alt="The elegant ambiance of Ginza Ittoku — Kano School painting with private seating" loading="lazy">
+        <div class="hosts-caption" data-en="Ginza Ittoku — where Japanese culture meets genuine warmth." data-ja="銀座一徳 ── 日本文化と真の温もりが交わる場所。">Ginza Ittoku — where Japanese culture meets genuine warmth.</div>
+      </div>
+      <div class="hosts-text">
+        <span class="section-label" data-en="Our Hosts" data-ja="キャスト紹介">Our Hosts</span>
+        <h2 class="section-title" data-en="The Heart of Ittoku" data-ja="一徳の魂">The Heart of Ittoku</h2>
+        <div class="divider"></div>
+        <p data-en="At the center of every unforgettable evening at Ginza Ittoku are our hosts: handsome gentlemen impeccably dressed in traditional kimono, who bring warmth, wit, and genuine care to every private experience." data-ja="銀座一徳の忘れられない夜を彩るのは、美しい着物を纏ったイケメンのキャストたち。洗練されたユーモアと温かさで、あなただけのプライベートな時間を彩ります。">At the center of every unforgettable evening at Ginza Ittoku are our hosts: handsome gentlemen impeccably dressed in traditional kimono, who bring warmth, wit, and genuine care to every private experience.</p>
+        <p data-en="Our cast is proudly gay — and creates a space where every guest is celebrated without reservation. Ittoku is a sanctuary of complete acceptance and elegance, welcoming all who love Japan's beauty." data-ja="私たちのキャストはゲイであることを誇りとし、すべてのゲストが心から自分らしくいられる場所をつくっています。一徳は、日本の美しさを愛するすべての人を歓迎する、完全な受容と品格の空間です。">Our cast is proudly gay — and creates a space where every guest is celebrated without reservation. Ittoku is a sanctuary of complete acceptance and elegance, welcoming all who love Japan's beauty.</p>
+        <p data-en="Fluent in both Japanese and English, our hosts are also passionate storytellers — bringing the 400-year-old cultural treasures surrounding you to life through conversation and genuine human connection." data-ja="日本語と英語に堪能なキャストは、あなたを取り囲む400年の文化的宝物の物語を、心のこもった会話で生き生きと語ります。">Fluent in both Japanese and English, our hosts are also passionate storytellers — bringing the 400-year-old cultural treasures surrounding you to life through conversation and genuine human connection.</p>
+        <div class="hosts-badge" data-en="LGBTQ+ Friendly · All Guests Welcome" data-ja="LGBTQ+フレンドリー · すべての方を歓迎します">LGBTQ+ Friendly · All Guests Welcome</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #hosts { background: #0D0D0D; padding: 9rem 0; }
+  .hosts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .hosts-image { position: relative; overflow: hidden; }
+  .hosts-image img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
+  .hosts-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    padding: 2.5rem 1.5rem 1.25rem;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.6);
+    font-family: var(--font-sans); letter-spacing: 0.04em;
+  }
+  .hosts-text p {
+    color: rgba(255,255,255,0.68);
+    font-size: 1rem; line-height: 1.95;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-sans); font-weight: 300;
+  }
+  .hosts-badge {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    border: 1px solid var(--gold);
+    padding: 0.7rem 1.5rem; margin-top: 1.5rem;
+    font-size: 0.78rem; color: var(--gold);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    font-family: var(--font-sans);
+  }
+  .hosts-badge::before { content: '✦'; font-size: 0.65rem; }
+  @media (max-width: 1024px) {
+    .hosts-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  }
+  @media (max-width: 768px) {
+    #hosts { padding: 5.5rem 0; }
+  }
+</style>
