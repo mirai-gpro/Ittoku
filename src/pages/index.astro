@@ -1,0 +1,208 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Story from '../components/Story.astro';
+import Treasures from '../components/Treasures.astro';
+import Hosts from '../components/Hosts.astro';
+import Experience from '../components/Experience.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Gallery from '../components/Gallery.astro';
+import Booking from '../components/Booking.astro';
+import FAQ from '../components/FAQ.astro';
+import Location from '../components/Location.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Ginza Ittoku | Private Imperial Japanese Cultural Experience"
+  description="Experience ¥300M of Kyoto's imperial palace in Ginza's most exclusive cultural sanctuary. Private bookings with kimono-clad hosts. ¥33,000/person."
+>
+  <Navbar />
+  <Hero />
+  <Story />
+  <Treasures />
+  <Hosts />
+  <Experience />
+  <Testimonials />
+  <Gallery />
+  <Booking />
+  <FAQ />
+  <Location />
+  <FinalCTA />
+  <Footer />
+</Layout>
+
+<script>
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // Language Toggle
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  function setLang(lang: string) {
+    document.body.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang === 'ja' ? 'ja' : 'en');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent?.trim() === (lang === 'en' ? 'EN' : '日本語'));
+    });
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const text = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+      if (text) el.innerHTML = text;
+    });
+    document.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[data-placeholder-en]').forEach(el => {
+      el.placeholder = el.getAttribute('data-placeholder-' + lang) || el.getAttribute('data-placeholder-en') || '';
+    });
+    buildFAQ(lang);
+  }
+
+  // Language toggle buttons
+  document.querySelectorAll('[data-lang-switch]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = (btn as HTMLElement).getAttribute('data-lang-switch') || 'en';
+      setLang(lang);
+    });
+  });
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // FAQ
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  const faqData = [
+    { en: { q: "How far in advance should I book?", a: "We recommend booking at least 7 days in advance, especially for weekends and peak seasons (cherry blossom March–April, autumn leaves November). Contact us to check last-minute availability." }, ja: { q: "どのくらい前に予約すべきですか？", a: "特に週末や繁忙期（桜の季節3〜4月、紅葉の11月）は、7日前までのご予約をお勧めします。直前のご予約は空き状況をお問い合わせください。" } },
+    { en: { q: "Is the ¥33,000 per person all-inclusive?", a: "Yes. It includes 2 hours of private space, premium sake & spirits, seasonal kaiseki-style menu, cultural guide service, and access to all cultural treasures. Additional premium bottles or extended time can be arranged separately." }, ja: { q: "¥33,000はすべて込みですか？", a: "はい。2時間のプライベート空間、プレミアム日本酒・スピリッツ、季節の懐石スタイルコース、文化ガイドサービス、すべての文化財へのアクセスが含まれます。追加ボトルや延長は別途ご相談ください。" } },
+    { en: { q: "Is Ginza Ittoku LGBTQ+ friendly?", a: "Absolutely. Our cast is proudly gay, and we welcome all guests with complete openness. Ittoku is a space where everyone is celebrated — regardless of who they are or who they love." }, ja: { q: "銀座一徳はLGBTQ+フレンドリーですか？", a: "もちろんです。私たちのキャストはゲイであることを誇りとし、すべてのゲストを心から歓迎しています。一徳は、あなたが何者であれ、誰を愛していても、完全に受け入れられる場所です。" } },
+    { en: { q: "Do you speak English?", a: "Yes. Our staff and hosts include fluent English speakers. The VIP chamber also features a multilingual digital cultural guide in English and Japanese." }, ja: { q: "英語は話せますか？", a: "はい。スタッフおよびキャストは英語に堪能です。VIPルームには英語・日本語の多言語デジタル文化ガイドもご用意しています。" } },
+    { en: { q: "Can you accommodate dietary restrictions?", a: "Absolutely. We can accommodate vegetarian, vegan, halal, kosher, and allergy requirements with advance notice (minimum 3 days). Please specify when booking." }, ja: { q: "食事制限に対応していますか？", a: "はい。ベジタリアン、ビーガン、ハラール、コーシャー、アレルギー対応が可能です。ご予約時に3日前までにお知らせください。" } },
+    { en: { q: "What is your cancellation policy?", a: "Cancellations 7+ days before: 50% refund. Cancellations within 7 days: no refund, as we turn away other guests to guarantee your privacy. We recommend travel insurance for international visitors." }, ja: { q: "キャンセルポリシーを教えてください。", a: "7日以上前：50%返金。7日以内：返金不可（お客様のプライバシーを保つため他のご予約をお断りしているためです）。海外からのお客様には旅行保険をお勧めします。" } },
+    { en: { q: "What should I wear?", a: "Smart casual is perfectly appropriate. Traditional Japanese attire (kimono, yukata) is welcome and appreciated. Kimono rental services can be arranged on request." }, ja: { q: "服装を教えてください。", a: "スマートカジュアルで問題ありません。着物や浴衣もぜひどうぞ。ご希望の方には着物レンタルのご手配も承ります。" } },
+    { en: { q: "How do I get there from my hotel?", a: "We're at Ginza 8-3-11, 5 minutes from Shimbashi Station and 7 minutes from Ginza Station. Most luxury hotels can arrange taxi service (approx. ¥1,500–2,500). Detailed directions are included with your booking confirmation." }, ja: { q: "アクセス方法を教えてください。", a: "銀座8-3-11に位置し、新橋駅から徒歩5分、銀座駅から徒歩7分です。主要ホテルからはタクシーが便利です（目安：¥1,500〜2,500）。詳しいアクセス方法は予約確認と一緒にお送りします。" } }
+  ];
+
+  function buildFAQ(lang = 'en') {
+    const list = document.querySelector('.faq-list');
+    if (!list) return;
+    list.innerHTML = faqData.map((item, i) => {
+      const d = (item as any)[lang] || item.en;
+      return `<div class="faq-item"><button class="faq-question" data-faq-index="${i}"><span>${d.q}</span><span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">${d.a}</div></div></div>`;
+    }).join('');
+
+    // Re-attach FAQ event listeners
+    list.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const index = parseInt((btn as HTMLElement).getAttribute('data-faq-index') || '0');
+        toggleFAQ(index);
+      });
+    });
+  }
+
+  function toggleFAQ(index: number) {
+    const items = document.querySelectorAll('.faq-item');
+    const item = items[index];
+    const isOpen = item.classList.contains('open');
+    items.forEach(i => { i.classList.remove('open'); i.querySelector('.faq-question')?.classList.remove('active'); });
+    if (!isOpen) { item.classList.add('open'); item.querySelector('.faq-question')?.classList.add('active'); }
+  }
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // Tabs
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = (btn as HTMLElement).getAttribute('data-tab');
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + id)?.classList.add('active');
+      btn.classList.add('active');
+    });
+  });
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // Testimonial Slider
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  let slideIndex = 0;
+  const track = () => document.getElementById('testimonialTrack');
+  const getCards = () => document.querySelectorAll('.testimonial-card');
+  const getVisible = () => window.innerWidth < 768 ? 1 : 2;
+
+  function buildDots() {
+    const dotsEl = document.getElementById('sliderDots');
+    if (!dotsEl) return;
+    const total = Math.ceil(getCards().length / getVisible());
+    dotsEl.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot' + (i === slideIndex ? ' active' : '');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsEl.appendChild(dot);
+    }
+  }
+
+  function goToSlide(index: number) {
+    const t = track();
+    const cards = getCards();
+    if (!t || !cards.length) return;
+    const maxSlide = Math.ceil(cards.length / getVisible()) - 1;
+    slideIndex = Math.max(0, Math.min(index, maxSlide));
+    const cardW = (cards[0] as HTMLElement).offsetWidth + 32;
+    t.style.transform = `translateX(-${slideIndex * cardW * getVisible()}px)`;
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === slideIndex));
+  }
+
+  document.querySelectorAll('[data-slide-dir]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dir = parseInt((btn as HTMLElement).getAttribute('data-slide-dir') || '0');
+      goToSlide(slideIndex + dir);
+    });
+  });
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // Nav scroll effect
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+    checkFadeIn();
+  });
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // Fade-in on scroll
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  function checkFadeIn() {
+    document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.9) el.classList.add('visible');
+    });
+  }
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // Form submit
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  const bookingForm = document.getElementById('bookingForm');
+  bookingForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = (e.target as HTMLFormElement).querySelector('.form-submit') as HTMLButtonElement;
+    const lang = document.body.getAttribute('data-lang');
+    btn.textContent = lang === 'ja' ? '送信しました ✓ 24時間以内にご連絡します' : 'Request Sent ✓ We\'ll be in touch within 24h';
+    btn.style.background = '#2a6e2a';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = lang === 'ja' ? '予約リクエストを送る' : 'Send Reservation Request';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 5000);
+  });
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // Init
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  buildFAQ('en');
+  buildDots();
+  checkFadeIn();
+
+  // Set minimum booking date (3 days from now)
+  const dateInput = document.querySelector('input[type="date"]') as HTMLInputElement;
+  if (dateInput) {
+    const d = new Date();
+    d.setDate(d.getDate() + 3);
+    dateInput.min = d.toISOString().split('T')[0];
+  }
+
+  window.addEventListener('resize', () => { buildDots(); goToSlide(0); });
+</script>

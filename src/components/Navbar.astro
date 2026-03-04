@@ -1,0 +1,99 @@
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    一徳
+    <span>Ginza Ittoku</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#story" data-en="Our Story" data-ja="一徳について">Our Story</a></li>
+      <li><a href="#treasures" data-en="Culture" data-ja="文化財">Culture</a></li>
+      <li><a href="#hosts" data-en="Our Hosts" data-ja="キャスト">Our Hosts</a></li>
+      <li><a href="#experience" data-en="Experience" data-ja="体験">Experience</a></li>
+      <li><a href="#booking" data-en="Booking" data-ja="予約">Booking</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang-switch="en">EN</button>
+      <button class="lang-btn" data-lang-switch="ja">日本語</button>
+    </div>
+    <a href="#booking" class="nav-cta" data-en="Reserve" data-ja="予約する">Reserve</a>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, transparent 100%);
+    transition: background var(--transition), padding var(--transition);
+  }
+  nav.scrolled {
+    background: rgba(10,10,10,0.96);
+    padding: 0.85rem 2.5rem;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+  }
+  .nav-logo {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    line-height: 1;
+  }
+  .nav-logo span {
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    color: rgba(201,168,76,0.7);
+    text-transform: uppercase;
+    font-family: var(--font-sans);
+    font-weight: 300;
+    margin-top: 2px;
+  }
+  .nav-right { display: flex; align-items: center; gap: 2rem; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .lang-toggle { display: flex; border: 1px solid rgba(201,168,76,0.5); }
+  .lang-btn {
+    background: none; border: none;
+    color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    transition: all var(--transition);
+    font-family: var(--font-sans);
+  }
+  .lang-btn.active { background: var(--gold); color: var(--black); font-weight: 500; }
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 0.55rem 1.4rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--transition);
+    text-decoration: none;
+    font-family: var(--font-sans);
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--black); }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+  }
+</style>

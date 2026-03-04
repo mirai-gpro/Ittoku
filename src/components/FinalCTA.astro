@@ -1,0 +1,109 @@
+<section id="instagram-follow">
+  <div class="section-inner fade-in ig-section">
+    <span class="section-label" data-en="Follow Our Story" data-ja="私たちのストーリーをフォロー">Follow Our Story</span>
+    <h2 class="section-title" data-en="See the World of Ittoku" data-ja="一徳の世界をご覧ください">See the World of Ittoku</h2>
+    <p class="ig-desc" data-en="Behind-the-scenes moments, cultural stories, and glimpses of the evening's magic — all on Instagram." data-ja="舞台裏の瞬間、文化の物語、夜の魔法の一幕——すべてInstagramで。">Behind-the-scenes moments, cultural stories, and glimpses of the evening's magic — all on Instagram.</p>
+    <a href="https://www.instagram.com/Ginza_ittoku" target="_blank" rel="noopener" class="ig-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+      @Ginza_ittoku
+    </a>
+  </div>
+</section>
+
+<section id="final-cta">
+  <div class="section-inner fade-in cta-inner">
+    <h2 class="cta-title" data-en="Your Journey Into Imperial Japan Awaits" data-ja="帝国の日本への旅が、あなたを待っています">Your Journey Into Imperial Japan Awaits</h2>
+    <p class="cta-sub" data-en="Limited Availability · Private Bookings Only" data-ja="限定予約 · 完全プライベート制">Limited Availability · Private Bookings Only</p>
+    <a href="#booking-form" class="btn-primary cta-btn" data-en="Reserve Your Experience Now" data-ja="今すぐ体験を予約する">Reserve Your Experience Now</a>
+    <p class="cta-ig-text" data-en="Or follow us on Instagram:" data-ja="Instagramでも体験の様子をご覧ください：">Or follow us on Instagram:</p>
+    <a href="https://www.instagram.com/Ginza_ittoku" target="_blank" rel="noopener" class="cta-ig-link">@Ginza_ittoku</a>
+    <div class="email-signup">
+      <input type="email" data-placeholder-en="Your email address" data-placeholder-ja="メールアドレス" placeholder="Your email address">
+      <button data-en="Subscribe" data-ja="登録する">Subscribe</button>
+    </div>
+    <p class="cta-privacy" data-en="We respect your privacy. Unsubscribe anytime." data-ja="プライバシーを尊重します。いつでも配信解除できます。">We respect your privacy. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<style>
+  #instagram-follow {
+    background: var(--black);
+    padding: 5rem 0;
+    border-top: 1px solid rgba(201,168,76,0.12);
+  }
+  .ig-section { text-align: center; }
+  .ig-section .section-title { margin-bottom: 1rem; }
+  .ig-desc {
+    color: rgba(255,255,255,0.5);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 0.97rem;
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+  }
+  .ig-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    transition: all 0.35s ease;
+    text-transform: uppercase;
+  }
+  .ig-btn:hover { background: var(--gold); color: var(--black); }
+
+  #final-cta {
+    background: var(--dark-mid);
+    padding: 9rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #final-cta::before {
+    content: '一徳';
+    position: absolute;
+    font-family: var(--font-serif);
+    font-size: 22rem;
+    color: rgba(201,168,76,0.03);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .cta-inner { position: relative; }
+  .cta-title { font-size: clamp(2rem, 5vw, 4.2rem); color: var(--white); font-weight: 300; margin-bottom: 1rem; }
+  .cta-sub { font-size: 0.78rem; color: rgba(255,255,255,0.4); font-family: var(--font-sans); margin-bottom: 3rem; letter-spacing: 0.22em; text-transform: uppercase; }
+  .cta-btn { font-size: 0.95rem; padding: 1.2rem 3rem; }
+  .cta-ig-text { color: rgba(255,255,255,0.3); font-size: 0.78rem; margin-top: 2rem; font-family: var(--font-sans); }
+  .cta-ig-link { color: var(--gold); text-decoration: none; font-size: 0.88rem; font-family: var(--font-sans); letter-spacing: 0.1em; }
+  .email-signup { display: flex; max-width: 430px; margin: 3rem auto 0; }
+  .email-signup input {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.14); border-right: none;
+    color: var(--white); padding: 0.9rem 1.2rem;
+    font-size: 0.88rem; outline: none; font-family: var(--font-sans);
+  }
+  .email-signup input::placeholder { color: rgba(255,255,255,0.28); }
+  .email-signup button {
+    background: var(--gold); border: 1px solid var(--gold);
+    color: var(--black); padding: 0.9rem 1.4rem;
+    cursor: pointer; font-size: 0.78rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    white-space: nowrap; transition: background var(--transition);
+    font-family: var(--font-sans); font-weight: 500;
+  }
+  .email-signup button:hover { background: var(--gold-dark); }
+  .cta-privacy { color: rgba(255,255,255,0.18); font-size: 0.72rem; margin-top: 1rem; font-family: var(--font-sans); }
+  @media (max-width: 480px) {
+    .email-signup { flex-direction: column; }
+    .email-signup input { border-right: 1px solid rgba(255,255,255,0.14); border-bottom: none; }
+  }
+</style>
