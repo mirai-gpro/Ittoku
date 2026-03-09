@@ -1,103 +1,42 @@
-<section id="gallery">
-  <div class="section-inner">
-    <div class="fade-in gallery-header">
-      <span class="section-label" data-en="Inside Ittoku" data-ja="一徳の内側">Inside Ittoku</span>
-      <h2 class="section-title" data-en="A World Unlike Any Other" data-ja="他に類を見ない世界">A World Unlike Any Other</h2>
+<section id="gallery" class="sec">
+  <div class="inner">
+    <div style="text-align:center; margin-bottom:3rem;" class="fade">
+      <span class="sl en">Inside Ittoku</span>
+      <span class="sl ja">一徳の内側</span>
+      <h2 class="st en">A World Unlike Any Other</h2>
+      <h2 class="st ja">他に類を見ない世界</h2>
     </div>
-    <div class="fade-in delay-1 gallery-grid">
-      <div class="gallery-large">
-        <img src="/images/instagram/eagle_painting_sofa.jpg" alt="Kano School eagle painting with luxurious seating at Ginza Ittoku" loading="lazy">
+    <div class="gl-grid fade">
+      <div class="gl-item tall">
+        <img src="/photos/hero_nio_entrance.jpg" alt="Entrance — guardian Nio statues flanking the gold fusuma">
       </div>
-      <div class="gallery-item">
-        <img src="/images/instagram/kiriko_ceiling.jpg" alt="Edo Kiriko glass ceiling art at Ginza Ittoku" loading="lazy">
+      <div class="gl-item">
+        <img src="/photos/corridor_gold.jpg" alt="Gold corridor leading to the inner rooms">
       </div>
-      <div class="gallery-item">
-        <img src="/images/instagram/gold_fusuma_door.jpg" alt="Gold leaf fusuma doors — HORIKIN craftsmanship" loading="lazy">
+      <div class="gl-item">
+        <img src="/photos/ceiling_art.jpg" alt="Imperial ceiling art — Nijo Castle inspired">
       </div>
-      <div class="gallery-item">
-        <img src="/images/instagram/geiko_performance.jpg" alt="Geiko performance — Kyoto traditional dance at Ginza Ittoku" loading="lazy" style="object-position:center top;">
+      <div class="gl-item">
+        <img src="/photos/tiger_painting_sofa.jpg" alt="Kano School tiger painting with bonsai">
       </div>
-      <div class="gallery-item">
-        <img src="/images/instagram/vip_room_gold_entrance.jpg" alt="VIP private chamber — gold leaf entry at Ginza Ittoku" loading="lazy">
+      <div class="gl-item">
+        <img src="/photos/private_room_armor.jpg" alt="Private room with samurai armor and crane paintings">
       </div>
-    </div>
-    <div class="fade-in delay-2 gallery-video">
-      <video autoplay muted loop playsinline>
-        <source src="/videos/story_reel.mp4" type="video/mp4">
-      </video>
-      <div class="gallery-video-caption">
-        <span data-en="Step Into Kyoto Imperial Palace — In Ginza" data-ja="銀座で体験する ── 京都御所の世界">Step Into Kyoto Imperial Palace — In Ginza</span>
+      <div class="gl-item">
+        <img src="/photos/maiko_event.jpg" alt="Maiko cultural performance event at Ittoku">
       </div>
-    </div>
-    <div class="fade-in gallery-cta">
-      <a href="#booking" class="btn-primary" data-en="Reserve Your Experience" data-ja="体験を予約する">Reserve Your Experience</a>
     </div>
   </div>
 </section>
 
 <style>
-  #gallery { background: var(--dark); padding: 6rem 0; }
-  .gallery-header { text-align: center; margin-bottom: 3.5rem; }
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
-    gap: 8px;
+  .gl-grid { display: grid; grid-template-columns: repeat(3,1fr); grid-auto-rows: 270px; gap: 5px; }
+  .gl-item { overflow: hidden; }
+  .gl-item.tall { grid-row: span 2; }
+  .gl-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.87); transition: transform .65s ease, filter .4s ease; }
+  .gl-item:hover img { transform: scale(1.04); filter: brightness(1); }
+  @media (max-width: 768px) {
+    .gl-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 190px; }
+    .gl-item.tall { grid-row: span 1; }
   }
-  .gallery-large {
-    grid-row: span 2;
-    overflow: hidden;
-    position: relative;
-  }
-  .gallery-large img,
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s ease;
-    filter: brightness(0.92);
-  }
-  .gallery-item {
-    overflow: hidden;
-    position: relative;
-  }
-  .gallery-item img {
-    height: 280px;
-  }
-  .gallery-large:hover img,
-  .gallery-item:hover img {
-    transform: scale(1.03);
-    filter: brightness(1.0);
-  }
-  .gallery-video {
-    margin-top: 8px;
-    overflow: hidden;
-    position: relative;
-    border-top: 2px solid var(--gold);
-  }
-  .gallery-video video {
-    width: 100%;
-    max-height: 320px;
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.85);
-  }
-  .gallery-video-caption {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.55);
-    padding: 0.6rem 1.5rem;
-    border: 1px solid rgba(201,168,76,0.4);
-    white-space: nowrap;
-  }
-  .gallery-video-caption span {
-    font-family: var(--font-serif);
-    color: var(--gold);
-    font-size: 1rem;
-    letter-spacing: 0.15em;
-  }
-  .gallery-cta { text-align: center; margin-top: 3rem; }
 </style>

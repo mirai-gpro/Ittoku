@@ -1,99 +1,33 @@
-<nav id="navbar">
-  <a href="#" class="nav-logo">
-    一徳
-    <span>Ginza Ittoku</span>
-  </a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="#story" data-en="Our Story" data-ja="一徳について">Our Story</a></li>
-      <li><a href="#treasures" data-en="Culture" data-ja="文化財">Culture</a></li>
-      <li><a href="#hosts" data-en="Our Hosts" data-ja="キャスト">Our Hosts</a></li>
-      <li><a href="#experience" data-en="Experience" data-ja="体験">Experience</a></li>
-      <li><a href="#booking" data-en="Booking" data-ja="予約">Booking</a></li>
-    </ul>
-    <div class="lang-toggle">
-      <button class="lang-btn active" data-lang-switch="en">EN</button>
-      <button class="lang-btn" data-lang-switch="ja">日本語</button>
+<nav id="nav">
+  <a href="#" class="logo">一徳<small>Ginza Ittoku</small></a>
+  <div class="nav-r">
+    <div class="lang-sw">
+      <button class="lb on" id="bEn" data-lang-switch="en">EN</button>
+      <button class="lb" id="bJa" data-lang-switch="ja">日本語</button>
     </div>
-    <a href="#booking" class="nav-cta" data-en="Reserve" data-ja="予約する">Reserve</a>
+    <a href="https://www.tablecheck.com/shops/ginza-ittoku/reserve" target="_blank" rel="noopener" class="nav-book en">Reserve</a>
+    <a href="https://www.tablecheck.com/shops/ginza-ittoku/reserve" target="_blank" rel="noopener" class="nav-book ja">予約する</a>
   </div>
 </nav>
 
 <style>
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    padding: 1.5rem 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, transparent 100%);
-    transition: background var(--transition), padding var(--transition);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 2rem;
+    background: linear-gradient(to bottom, rgba(0,0,0,.85), transparent);
+    transition: background var(--ease), padding var(--ease);
   }
-  nav.scrolled {
-    background: rgba(10,10,10,0.96);
-    padding: 0.85rem 2.5rem;
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(201,168,76,0.12);
-  }
-  .nav-logo {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    color: var(--gold);
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    line-height: 1;
-  }
-  .nav-logo span {
-    display: block;
-    font-size: 0.6rem;
-    letter-spacing: 0.35em;
-    color: rgba(201,168,76,0.7);
-    text-transform: uppercase;
-    font-family: var(--font-sans);
-    font-weight: 300;
-    margin-top: 2px;
-  }
-  .nav-right { display: flex; align-items: center; gap: 2rem; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: color var(--transition);
-  }
-  .nav-links a:hover { color: var(--gold); }
-  .lang-toggle { display: flex; border: 1px solid rgba(201,168,76,0.5); }
-  .lang-btn {
-    background: none; border: none;
-    color: rgba(255,255,255,0.5);
-    cursor: pointer;
-    padding: 0.3rem 0.7rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    transition: all var(--transition);
-    font-family: var(--font-sans);
-  }
-  .lang-btn.active { background: var(--gold); color: var(--black); font-weight: 500; }
-  .nav-cta {
-    background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    padding: 0.55rem 1.4rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all var(--transition);
-    text-decoration: none;
-    font-family: var(--font-sans);
-  }
-  .nav-cta:hover { background: var(--gold); color: var(--black); }
+  nav.on { background: rgba(8,8,8,.97); padding: .8rem 2rem; backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,.12); }
+  .logo { font-family: var(--fs); color: var(--gold); font-size: 1.7rem; letter-spacing: .05em; }
+  .logo small { display: block; font-size: .5rem; color: rgba(201,168,76,.55); letter-spacing: .35em; font-family: var(--fn); font-weight: 300; text-transform: uppercase; margin-top: 2px; }
+  .nav-r { display: flex; align-items: center; gap: 1rem; }
+  .lang-sw { display: flex; border: 1px solid rgba(201,168,76,.35); }
+  .lb { background: none; border: none; color: rgba(255,255,255,.4); cursor: pointer; padding: .28rem .65rem; font-size: .72rem; font-family: var(--fn); transition: all var(--ease); }
+  .lb.on, .lb:hover { background: var(--gold); color: var(--black); }
+  .nav-book { background: var(--gold); color: var(--black); padding: .5rem 1.3rem; font-size: .78rem; font-family: var(--fn); letter-spacing: .08em; text-transform: uppercase; transition: background var(--ease); }
+  .nav-book:hover { background: var(--gold-l); }
   @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
+    nav { padding: 1rem 1.25rem; }
   }
 </style>
