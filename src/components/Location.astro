@@ -1,74 +1,39 @@
-<section id="location">
-  <div class="section-inner">
-    <div class="location-grid fade-in">
-      <div class="map-wrap">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.42!2d139.7660!3d35.6639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188be84d79f1b9%3A0xf2f1c5b0c2d78d3!2sGinza%2C%20Chuo%20City%2C%20Tokyo!5e0!3m2!1sen!2sjp!4v1"
-          loading="lazy"
-          allowfullscreen
-          title="Ginza Ittoku — Map">
-        </iframe>
+<section id="location" class="sec">
+  <div class="inner">
+    <div class="loc-grid fade">
+      <div class="loc-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.42!2d139.7660!3d35.6639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188be84d79f1b9%3A0xf2f1c5b0c2d78d3!2sGinza%2C%20Chuo%20City%2C%20Tokyo!5e0!3m2!1sen!2sjp!4v1" allowfullscreen="" loading="lazy"></iframe>
       </div>
-      <div>
-        <span class="section-label" data-en="Find Us" data-ja="アクセス">Find Us</span>
-        <h2 class="section-title" data-en="Location & Access" data-ja="所在地・アクセス">Location & Access</h2>
-        <div class="location-info-item">
-          <h4 data-en="Address" data-ja="住所">Address</h4>
-          <p>8-3-11 Ginza, Chuo-ku<br>Tokyo 104-0061, Japan</p>
-        </div>
-        <div class="location-info-item">
-          <h4 data-en="Nearest Stations" data-ja="最寄り駅">Nearest Stations</h4>
-          <ul>
-            <li data-en="Shimbashi Station — 5 min walk" data-ja="新橋駅 ── 徒歩5分">Shimbashi Station — 5 min walk</li>
-            <li data-en="Ginza Station — 7 min walk" data-ja="銀座駅 ── 徒歩7分">Ginza Station — 7 min walk</li>
-            <li data-en="Higashi-Ginza Station — 8 min walk" data-ja="東銀座駅 ── 徒歩8分">Higashi-Ginza Station — 8 min walk</li>
-          </ul>
-        </div>
-        <div class="location-info-item">
-          <h4 data-en="From Major Hotels" data-ja="主要ホテルから">From Major Hotels</h4>
-          <ul>
-            <li data-en="Imperial Hotel Tokyo — 8 min walk" data-ja="帝国ホテル ── 徒歩8分">Imperial Hotel Tokyo — 8 min walk</li>
-            <li data-en="The Peninsula Tokyo — 12 min walk" data-ja="ザ・ペニンシュラ東京 ── 徒歩12分">The Peninsula Tokyo — 12 min walk</li>
-            <li data-en="Mandarin Oriental Tokyo — 10 min walk" data-ja="マンダリンオリエンタル東京 ── 徒歩10分">Mandarin Oriental Tokyo — 10 min walk</li>
-          </ul>
-        </div>
-        <a href="https://maps.google.com/?q=Ginza+8-3-11,+Chuo,+Tokyo" target="_blank" rel="noopener" class="btn-directions" data-en="↗ Get Directions" data-ja="↗ 地図で見る">↗ Get Directions</a>
+      <div class="loc-info">
+        <span class="sl en">Access</span>
+        <span class="sl ja">アクセス</span>
+        <h2 class="st en" style="font-size:1.9rem;">Find Us in Ginza</h2>
+        <h2 class="st ja" style="font-size:1.9rem;">銀座へのアクセス</h2>
+        <div class="div"></div>
+        <p><strong class="en">Address</strong><strong class="ja">住所</strong><br>
+          <span class="en">Ginza, Chuo-ku, Tokyo</span>
+          <span class="ja">東京都中央区銀座</span></p>
+        <p style="margin-top:.75rem;"><strong class="en">Hours</strong><strong class="ja">営業時間</strong><br>20:00 – 24:00</p>
+        <p style="margin-top:.75rem;"><strong class="en">Nearest Station</strong><strong class="ja">最寄り駅</strong><br>
+          <span class="en">Ginza Station (Tokyo Metro) — 3 min walk</span>
+          <span class="ja">東京メトロ 銀座駅 徒歩3分</span></p>
+        <p style="margin-top:.75rem;"><strong>Instagram</strong><br>
+          <a href="https://www.instagram.com/ginza_ittoku" target="_blank" rel="noopener" class="loc-link">@ginza_ittoku</a></p>
+        <p style="margin-top:.75rem;"><strong class="en">Booking</strong><strong class="ja">ご予約</strong><br>
+          <a href="https://www.tablecheck.com/shops/ginza-ittoku/reserve" target="_blank" rel="noopener" class="loc-link en">TableCheck →</a>
+          <a href="https://www.tablecheck.com/shops/ginza-ittoku/reserve" target="_blank" rel="noopener" class="loc-link ja">TableCheck →</a></p>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  #location { background: var(--dark); padding: 9rem 0; }
-  .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-  .map-wrap { aspect-ratio: 4/3; overflow: hidden; background: var(--dark-mid); }
-  .map-wrap iframe { width: 100%; height: 100%; border: none; }
-  .location-info-item { margin-bottom: 2.5rem; }
-  .location-info-item h4 {
-    font-size: 0.7rem; letter-spacing: 0.35em; color: var(--gold);
-    text-transform: uppercase; margin-bottom: 0.85rem;
-    font-family: var(--font-sans); font-weight: 400;
-  }
-  .location-info-item p, .location-info-item ul {
-    color: rgba(255,255,255,0.6); font-size: 0.92rem;
-    line-height: 1.85; font-family: var(--font-sans); font-weight: 300;
-  }
-  .location-info-item ul { list-style: none; }
-  .location-info-item li { padding: 0.25rem 0; }
-  .location-info-item li::before { content: '· '; color: var(--gold); }
-  .btn-directions {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    border: 1px solid var(--gold); color: var(--gold);
-    padding: 0.7rem 1.4rem; font-size: 0.78rem;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    text-decoration: none; margin-top: 1rem;
-    transition: all var(--transition); font-family: var(--font-sans);
-  }
-  .btn-directions:hover { background: var(--gold); color: var(--black); }
-  @media (max-width: 1024px) {
-    .location-grid { grid-template-columns: 1fr; gap: 3.5rem; }
-  }
+  .loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .loc-map iframe { width: 100%; height: 360px; border: none; filter: grayscale(.4); }
+  .loc-info p { color: rgba(255,255,255,.52); font-size: .9rem; font-weight: 300; margin-bottom: .75rem; }
+  .loc-info strong { color: var(--gold); font-weight: 400; }
+  .loc-link { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; font-size: .88rem; font-weight: 300; }
   @media (max-width: 768px) {
-    #location { padding: 5.5rem 0; }
+    .loc-grid { grid-template-columns: 1fr; gap: 2rem; }
   }
 </style>

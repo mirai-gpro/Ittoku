@@ -1,166 +1,41 @@
-<section id="booking">
-  <div class="section-inner">
-    <div class="booking-header fade-in">
-      <span class="section-label" data-en="Reservations" data-ja="ご予約">Reservations</span>
-      <h2 class="section-title" data-en="Reserve Your Private Experience" data-ja="プライベート体験を予約する">Reserve Your Private Experience</h2>
-    </div>
-    <div class="pricing-grid fade-in delay-1">
-      <div class="pricing-card">
-        <span class="pricing-label" data-en="Standard" data-ja="スタンダード">Standard</span>
-        <h3 data-en="Private Experience" data-ja="プライベート体験">Private Experience</h3>
-        <span class="pricing-price">¥33,000</span>
-        <span class="pricing-note" data-en="per person · 2 hours · 2–8 guests" data-ja="お一人様 · 2時間 · 2〜8名様">per person · 2 hours · 2–8 guests</span>
-        <ul class="pricing-features">
-          <li data-en="Complete privacy — your group only" data-ja="完全プライベート空間">Complete privacy — your group only</li>
-          <li data-en="Kimono-clad gay hosts" data-ja="着物姿のキャスト">Kimono-clad gay hosts</li>
-          <li data-en="Premium sake & spirits" data-ja="プレミアム日本酒・スピリッツ">Premium sake & spirits</li>
-          <li data-en="Seasonal kaiseki-style menu" data-ja="季節の懐石スタイルコース">Seasonal kaiseki-style menu</li>
-          <li data-en="Cultural guide service" data-ja="文化ガイドサービス">Cultural guide service</li>
-          <li data-en="English & Japanese staff" data-ja="英語・日本語対応スタッフ">English & Japanese staff</li>
-        </ul>
-        <a href="#booking-form" class="btn-primary booking-btn" data-en="Check Availability" data-ja="空き確認・予約">Check Availability</a>
-      </div>
-      <div class="pricing-card featured">
-        <span class="pricing-label" data-en="VIP" data-ja="VIP">VIP</span>
-        <h3 data-en="VIP Chamber" data-ja="VIPルーム">VIP Chamber</h3>
-        <span class="pricing-price" data-en="From ¥33,000" data-ja="¥33,000〜">From ¥33,000</span>
-        <span class="pricing-note" data-en="per person · contact for VIP availability" data-ja="お一人様 · 空き状況はお問い合わせください">per person · contact for VIP availability</span>
-        <ul class="pricing-features">
-          <li data-en="Everything in Standard" data-ja="スタンダードのすべてを含む">Everything in Standard</li>
-          <li data-en="Exclusive VIP private room" data-ja="専用VIPプライベートルーム">Exclusive VIP private room</li>
-          <li data-en="Samurai armor up-close viewing" data-ja="甲冑間近鑑賞">Samurai armor up-close viewing</li>
-          <li data-en="Multilingual digital guide" data-ja="多言語デジタルガイド">Multilingual digital guide</li>
-          <li data-en="3–4 hour option available" data-ja="3〜4時間コース対応">3–4 hour option available</li>
-          <li data-en="Priority concierge service" data-ja="優先コンシェルジュサービス">Priority concierge service</li>
-        </ul>
-        <a href="#booking-form" class="btn-primary booking-btn" data-en="Inquire About VIP" data-ja="VIPについて問い合わせ">Inquire About VIP</a>
-      </div>
-    </div>
-
-    <div class="booking-form-wrap fade-in" id="booking-form">
-      <h3 class="booking-form-title" data-en="Make a Reservation" data-ja="ご予約フォーム">Make a Reservation</h3>
-      <p class="booking-form-sub" data-en="We'll respond within 24 hours to confirm your booking." data-ja="24時間以内にご連絡し、ご予約を確認いたします。">We'll respond within 24 hours to confirm your booking.</p>
-      <form class="form-grid" id="bookingForm">
-        <div class="form-group">
-          <label data-en="Full Name *" data-ja="お名前 *">Full Name *</label>
-          <input type="text" required data-placeholder-en="John Smith" data-placeholder-ja="山田 太郎" placeholder="John Smith">
+<section id="booking" class="sec sec-alt">
+  <div class="inner">
+    <div class="book-box fade">
+      <span class="sl en" style="display:block; text-align:center;">Reservations</span>
+      <span class="sl ja" style="display:block; text-align:center;">ご予約</span>
+      <h2 class="st en" style="text-align:center;">Reserve Your Evening</h2>
+      <h2 class="st ja" style="text-align:center;">ご予約はこちら</h2>
+      <p class="en">All reservations are made securely via TableCheck. Private sessions begin at 20:00.</p>
+      <p class="ja">ご予約はTableCheckにて承っております。プライベートセッションは20:00スタートです。</p>
+      <div class="bh">
+        <div class="bh-i">
+          <strong>20:00 – 24:00</strong>
+          <small class="en">Open daily</small>
+          <small class="ja">毎日営業</small>
         </div>
-        <div class="form-group">
-          <label data-en="Email Address *" data-ja="メールアドレス *">Email Address *</label>
-          <input type="email" required placeholder="your@email.com">
-        </div>
-        <div class="form-group">
-          <label data-en="Phone / WhatsApp" data-ja="電話番号 / WhatsApp">Phone / WhatsApp</label>
-          <input type="tel" placeholder="+1 555 000 0000">
-        </div>
-        <div class="form-group">
-          <label data-en="Number of Guests *" data-ja="人数 *">Number of Guests *</label>
-          <select required>
-            <option value="" data-en="Select..." data-ja="選択してください">Select...</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label data-en="Preferred Date *" data-ja="ご希望日 *">Preferred Date *</label>
-          <input type="date" required>
-        </div>
-        <div class="form-group">
-          <label data-en="Experience Type" data-ja="体験プラン">Experience Type</label>
-          <select>
-            <option value="standard" data-en="Standard (¥33,000/person)" data-ja="スタンダード（¥33,000/人）">Standard (¥33,000/person)</option>
-            <option value="vip" data-en="VIP Chamber (inquire)" data-ja="VIPルーム（要問い合わせ）">VIP Chamber (inquire)</option>
-          </select>
-        </div>
-        <div class="form-group full">
-          <label data-en="Special Requests / Dietary Restrictions" data-ja="特別なご要望・アレルギー・食事制限">Special Requests / Dietary Restrictions</label>
-          <textarea data-placeholder-en="Anniversary dinner, vegetarian, wheelchair access, etc." data-placeholder-ja="記念日ディナー、ベジタリアン、車椅子対応など" placeholder="Anniversary dinner, vegetarian, wheelchair access, etc."></textarea>
-        </div>
-        <div class="form-group full">
-          <button type="submit" class="form-submit" data-en="Send Reservation Request" data-ja="予約リクエストを送る">Send Reservation Request</button>
-        </div>
-      </form>
-      <div class="contact-alts">
-        <p data-en="Or reach us directly:" data-ja="またはこちらから直接ご連絡ください：">Or reach us directly:</p>
-        <div class="contact-links">
-          <a href="mailto:reservations@ginza-ittoku.com" class="contact-link">✉ reservations@ginza-ittoku.com</a>
-          <a href="https://www.instagram.com/Ginza_ittoku" target="_blank" rel="noopener" class="contact-link">📷 @Ginza_ittoku</a>
-          <a href="tel:+81312345678" class="contact-link">📞 +81-3-XXXX-XXXX</a>
+        <div class="bh-i" style="border-left:1px solid rgba(201,168,76,.18); padding-left:2.5rem;">
+          <strong>¥33,000</strong>
+          <small class="en">per person / 2h</small>
+          <small class="ja">お一人様 / 2時間</small>
         </div>
       </div>
+      <a href="https://www.tablecheck.com/shops/ginza-ittoku/reserve" target="_blank" rel="noopener" class="btn-g en" style="display:inline-block; font-size:.95rem; padding:1.1rem 3rem;">Book on TableCheck</a>
+      <a href="https://www.tablecheck.com/shops/ginza-ittoku/reserve" target="_blank" rel="noopener" class="btn-g ja" style="display:inline-block; font-size:.95rem; padding:1.1rem 3rem;">TableCheckで予約する</a>
+      <p class="tc-note en">TableCheck is a trusted Japanese restaurant reservation platform used across Japan.</p>
+      <p class="tc-note ja">TableCheckは日本全国で使われている信頼性の高い飲食店予約プラットフォームです。</p>
     </div>
   </div>
 </section>
 
 <style>
-  #booking { background: var(--dark); padding: 9rem 0; }
-  .booking-header { text-align: center; margin-bottom: 5rem; }
-  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 5rem; }
-  .pricing-card { background: var(--dark-mid); padding: 3.5rem; }
-  .pricing-card.featured {
-    background: linear-gradient(140deg, #1A1208 0%, var(--dark-mid) 100%);
-    border: 1px solid rgba(201,168,76,0.25);
-  }
-  .pricing-label { font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; font-family: var(--font-sans); }
-  .pricing-card h3 { font-size: 1.7rem; color: var(--white); margin-bottom: 0.5rem; font-weight: 400; }
-  .pricing-price { font-family: var(--font-serif); font-size: 2.8rem; color: var(--gold); margin: 1.5rem 0 0.4rem; display: block; }
-  .pricing-note { font-size: 0.82rem; color: rgba(255,255,255,0.38); font-family: var(--font-sans); margin-bottom: 2rem; display: block; }
-  .pricing-features { list-style: none; margin-bottom: 2.5rem; }
-  .pricing-features li {
-    display: flex; gap: 0.7rem;
-    padding: 0.55rem 0;
-    font-size: 0.88rem; color: rgba(255,255,255,0.6);
-    border-bottom: 1px solid rgba(255,255,255,0.04); font-family: var(--font-sans);
-  }
-  .pricing-features li::before { content: '✓'; color: var(--gold); flex-shrink: 0; }
-  .booking-btn { display: block; text-align: center; }
-  .booking-form-wrap { max-width: 700px; margin: 0 auto; background: var(--dark-mid); padding: 4rem; }
-  .booking-form-title { font-size: 1.8rem; color: var(--white); margin-bottom: 0.4rem; font-weight: 400; }
-  .booking-form-sub { font-size: 0.88rem; color: rgba(255,255,255,0.45); margin-bottom: 3rem; font-family: var(--font-sans); }
-  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-  .form-group.full { grid-column: 1 / -1; }
-  .form-group label { font-size: 0.72rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); text-transform: uppercase; font-family: var(--font-sans); }
-  .form-group input, .form-group select, .form-group textarea {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: var(--white); padding: 0.85rem 1rem;
-    font-size: 0.93rem; font-family: var(--font-sans);
-    transition: border-color var(--transition); outline: none; width: 100%;
-  }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
-  .form-group select option { background: var(--dark); }
-  .form-group textarea { resize: vertical; min-height: 115px; }
-  .form-submit {
-    width: 100%; background: var(--gold); color: var(--black);
-    border: none; padding: 1.1rem;
-    font-size: 0.85rem; letter-spacing: 0.22em; text-transform: uppercase;
-    cursor: pointer; transition: background var(--transition);
-    margin-top: 0.5rem; font-family: var(--font-sans); font-weight: 500;
-  }
-  .form-submit:hover { background: var(--gold-dark); }
-  .contact-alts { text-align: center; margin-top: 3rem; }
-  .contact-alts p { color: rgba(255,255,255,0.35); font-size: 0.82rem; margin-bottom: 1.25rem; font-family: var(--font-sans); }
-  .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
-  .contact-link {
-    color: var(--gold); text-decoration: none; font-size: 0.82rem;
-    letter-spacing: 0.04em; display: flex; align-items: center; gap: 0.4rem;
-    font-family: var(--font-sans); transition: opacity var(--transition);
-  }
-  .contact-link:hover { opacity: 0.65; }
+  .book-box { max-width: 580px; margin: 0 auto; text-align: center; }
+  .book-box p { color: rgba(255,255,255,.45); font-size: .9rem; font-weight: 300; margin-bottom: 2rem; }
+  .bh { display: inline-flex; gap: 2.5rem; border: 1px solid rgba(201,168,76,.18); padding: 1.2rem 2rem; margin-bottom: 2rem; }
+  .bh-i { text-align: center; }
+  .bh-i strong { display: block; font-family: var(--fs); color: var(--gold); font-size: 1.5rem; font-weight: 300; }
+  .bh-i small { font-size: .7rem; color: rgba(255,255,255,.3); letter-spacing: .1em; text-transform: uppercase; }
+  .tc-note { margin-top: 1.5rem; font-size: .78rem; color: rgba(255,255,255,.25); font-weight: 300; }
   @media (max-width: 768px) {
-    #booking { padding: 5.5rem 0; }
-    .pricing-grid { grid-template-columns: 1fr; }
-    .form-grid { grid-template-columns: 1fr; }
-    .booking-form-wrap { padding: 2rem 1.5rem; }
-  }
-  @media (max-width: 480px) {
-    .contact-links { flex-direction: column; align-items: center; }
-    .pricing-card { padding: 2rem 1.5rem; }
+    .bh { gap: 1.5rem; padding: 1rem 1.25rem; }
   }
 </style>
