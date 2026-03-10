@@ -1,0 +1,50 @@
+<section class="plan-photos">
+  <div class="inner">
+    <div class="pp-grid fade">
+      <div class="pp-item">
+        <img src="/photos/E4C6B874-7806-43F1-9174-7427ADC75E2B.jpg" alt="Ittoku interior 1" loading="lazy">
+      </div>
+      <div class="pp-item">
+        <img src="/photos/S__96583745_0.jpg" alt="Ittoku interior 2" loading="lazy">
+      </div>
+      <div class="pp-item">
+        <img src="/photos/S__96583757.jpg" alt="Ittoku interior 3" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .plan-photos {
+    background: var(--dark);
+    padding: 0 0 4rem;
+  }
+  .pp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .pp-item {
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+  }
+  .pp-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(.9);
+    transition: transform .5s ease, filter .4s ease;
+  }
+  .pp-item:hover img {
+    transform: scale(1.04);
+    filter: brightness(1);
+  }
+  @media (max-width: 768px) {
+    .pp-grid {
+      gap: .5rem;
+      max-width: 100%;
+    }
+  }
+</style>
