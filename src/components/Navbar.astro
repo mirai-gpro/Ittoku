@@ -1,5 +1,5 @@
 <nav id="nav">
-  <a href="#" class="logo">一徳<small>Ginza Ittoku</small></a>
+  <a href="#" class="logo"><img src="/images/logo_it.png" alt="一徳" class="logo-img"><small>Ginza Ittoku</small></a>
   <div class="nav-r">
     <!-- lang-sw hidden temporarily: English only mode -->
     <div class="lang-sw" style="display:none;">
@@ -20,7 +20,8 @@
     transition: background var(--ease), padding var(--ease);
   }
   nav.on { background: rgba(8,8,8,.97); padding: .8rem 2rem; backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,.12); }
-  .logo { font-family: var(--fs); color: var(--gold); font-size: 1.7rem; letter-spacing: .05em; }
+  .logo { font-family: var(--fs); color: var(--gold); font-size: 1.7rem; letter-spacing: .05em; display: flex; flex-direction: column; align-items: flex-start; }
+  .logo-img { height: 2rem; width: auto; display: block; }
   .logo small { display: block; font-size: .5rem; color: rgba(201,168,76,.55); letter-spacing: .35em; font-family: var(--fn); font-weight: 300; text-transform: uppercase; margin-top: 2px; }
   .nav-r { display: flex; align-items: center; gap: 1rem; }
   .lang-sw { display: flex; border: 1px solid rgba(201,168,76,.35); }
