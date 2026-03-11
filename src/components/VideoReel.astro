@@ -1,24 +1,19 @@
 <section class="video-reel">
-  <video autoplay muted loop playsinline>
-    <source src="/videos/hero_reel.mp4" type="video/mp4">
-  </video>
+  <div class="inner">
+    <video autoplay muted loop playsinline>
+      <source src="/videos/ittoku_pv.mp4" type="video/mp4">
+    </video>
+  </div>
 </section>
 
 <style>
   .video-reel {
-    display: flex;
-    justify-content: center;
     overflow: hidden;
     background: var(--black);
     padding: 3rem 0;
   }
   .video-reel video {
-    width: 30%;
+    width: 100%;
     display: block;
-  }
-  @media (max-width: 768px) {
-    .video-reel video {
-      width: 90%;
-    }
   }
 </style>
