@@ -1,8 +1,23 @@
 <section class="video-reel">
   <div class="inner">
-    <video autoplay muted loop playsinline>
-      <source src="/videos/ittoku_pv.mp4" type="video/mp4">
-    </video>
+    <div class="vr-wrap">
+      <video id="pvVideo" autoplay muted loop playsinline>
+        <source src="/videos/ittoku_pv.mp4" type="video/mp4">
+      </video>
+      <button class="vr-sound" id="pvSound" aria-label="Toggle sound">
+        <svg class="vr-ico off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <line x1="23" y1="9" x2="17" y2="15"/>
+          <line x1="17" y1="9" x2="23" y2="15"/>
+        </svg>
+        <svg class="vr-ico on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <path d="M19.07 4.93a10 10 0 010 14.14"/>
+          <path d="M15.54 8.46a5 5 0 010 7.07"/>
+        </svg>
+      </button>
+      <input class="vr-vol" id="pvVol" type="range" min="0" max="1" step="0.05" value="0.5">
+    </div>
   </div>
 </section>
 
@@ -12,8 +27,125 @@
     background: var(--black);
     padding: 3rem 0;
   }
+  .vr-wrap {
+    position: relative;
+  }
   .video-reel video {
     width: 100%;
     display: block;
+    cursor: pointer;
+  }
+
+  /* Sound button */
+  .vr-sound {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(0,0,0,.55);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 50%;
+    color: rgba(255,255,255,.7);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s, color .2s;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+  }
+  .vr-sound:hover {
+    background: rgba(0,0,0,.75);
+    color: #fff;
+  }
+  .vr-ico {
+    width: 18px;
+    height: 18px;
+    display: none;
+  }
+  /* Default: muted → show "off" icon */
+  .vr-ico.off { display: block; }
+  .vr-sound.unmuted .vr-ico.off { display: none; }
+  .vr-sound.unmuted .vr-ico.on  { display: block; }
+
+  /* Volume slider */
+  .vr-vol {
+    position: absolute;
+    bottom: 1rem;
+    right: 3.5rem;
+    width: 80px;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(255,255,255,.2);
+    border-radius: 2px;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s;
+    z-index: 2;
+    align-self: center;
+    cursor: pointer;
+  }
+  .vr-wrap:hover .vr-vol.visible,
+  .vr-vol.visible:focus {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .vr-vol::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gold, #C9A84C);
+    cursor: pointer;
+  }
+  .vr-vol::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gold, #C9A84C);
+    border: none;
+    cursor: pointer;
   }
 </style>
+
+<script>
+  const video = document.getElementById('pvVideo') as HTMLVideoElement;
+  const btn = document.getElementById('pvSound') as HTMLButtonElement;
+  const vol = document.getElementById('pvVol') as HTMLInputElement;
+
+  let savedVol = 0.5;
+
+  // Click video or button → toggle mute
+  function toggleMute() {
+    if (video.muted) {
+      video.muted = false;
+      video.volume = savedVol;
+      btn.classList.add('unmuted');
+      vol.classList.add('visible');
+      vol.value = String(savedVol);
+    } else {
+      video.muted = true;
+      btn.classList.remove('unmuted');
+      vol.classList.remove('visible');
+    }
+  }
+
+  video.addEventListener('click', toggleMute);
+  btn.addEventListener('click', (e) => { e.stopPropagation(); toggleMute(); });
+
+  // Volume slider
+  vol.addEventListener('input', () => {
+    savedVol = parseFloat(vol.value);
+    video.volume = savedVol;
+    if (savedVol === 0) {
+      video.muted = true;
+      btn.classList.remove('unmuted');
+    } else if (video.muted) {
+      video.muted = false;
+      btn.classList.add('unmuted');
+    }
+  });
+</script>
