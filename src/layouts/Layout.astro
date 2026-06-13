@@ -23,6 +23,42 @@ const { title, description } = Astro.props;
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "銀座一徳",
+    "alternateName": "Ginza Ittoku",
+    "url": "https://www.ginzaittoku.com/",
+    "image": "https://www.ginzaittoku.com/photos/hero_nio_entrance.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "銀座8丁目3番11号 和恒ビル8階",
+      "addressLocality": "中央区",
+      "addressRegion": "東京都",
+      "postalCode": "104-0061",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.6690261,
+      "longitude": 139.7591649
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "20:00",
+      "closes": "24:00"
+    },
+    "priceRange": "¥33,000",
+    "servesCuisine": "Japanese",
+    "acceptsReservations": "True",
+    "reservationUrl": "https://www.tablecheck.com/shops/ginzaittoku/reserve",
+    "sameAs": [
+      "https://www.instagram.com/ginza_ittoku"
+    ]
+  }
+  </script>
 </head>
 <body data-lang="en">
   <slot />
