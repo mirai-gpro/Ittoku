@@ -73,6 +73,15 @@ const { title, description } = Astro.props;
   fbq('track', 'PageView');
   </script>
   <!-- End Meta Pixel Code -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BT9DT0MLRR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BT9DT0MLRR');
+  </script>
 </head>
 <body data-lang="en">
   <noscript><img height="1" width="1" style="display:none"
