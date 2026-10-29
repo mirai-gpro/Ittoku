@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ginza-ittoku.com/sitemap-index.xml
+Sitemap: https://www.ginzaittoku.com/sitemap-index.xml

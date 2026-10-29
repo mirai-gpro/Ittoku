@@ -5,7 +5,7 @@
       "has": [
         {
           "type": "host",
-          "value": "(?!ginza-ittoku\\.com).*"
+          "value": "(?!www\\.ginzaittoku\\.com).*"
         }
       ],
       "headers": [
